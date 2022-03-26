@@ -18,7 +18,9 @@ def binary_search(myList,target):
 lst1 = [4,5,6,7,8,9,10,11,12,13]
 guess = 15
 
+
+
 print(binary_search(lst1, guess))           
-            
+print(binary_search())            
 
     
