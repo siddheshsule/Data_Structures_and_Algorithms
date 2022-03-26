@@ -4,9 +4,7 @@
 using namespace std;
 
 vector<int> quickSort(vector<int> v){
-    vector<int> less;
-    vector<int> greater;
-    vector<int> ans;
+    vector<int> less, greater, ans;
     int pivot;
     if(v.size() < 2){
         return v;
@@ -21,23 +19,22 @@ vector<int> quickSort(vector<int> v){
                 greater.push_back(v[i]);
             }
         }
-        less = quickSort(less);
-        less.push_back(pivot);
+        ans = quickSort(less);
+        ans.push_back(pivot);
         greater = quickSort(greater);
 
-        less.insert(less.end(), greater.begin(), greater.end());
-        return less;
+        ans.insert(ans.end(), greater.begin(), greater.end());
+        return ans;
     }
 }
 
 void displayVec(vector<int> v){
-    for(int i=0; i < v.size(); i++){
-        cout << v[i] << " " << endl;
+    for(auto i: v){
+        cout << i << " ";
     }
 }
 
 int main(){
     vector<int> myList{4,78,32,9,53,12,45,963,657,444,12544,789,2,1,0,3,68,98,100};
-    vector <int> ans = quickSort(myList);
-    displayVec(ans);
+    displayVec(quickSort(myList));
 }
