@@ -10,7 +10,7 @@ string is_prime(int N){
     }
 }
 
-int main(){
+int main(){ 
     cout << is_prime(25)<< "\n";
     // cout << is_prime(15)<< "\n";
     // cout << is_prime(7)<< "\n";
